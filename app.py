@@ -389,7 +389,7 @@ def process_command(user_input):
     current_cmd = get_current_command()
     
     # Adicionar comando ao terminal
-    add_to_terminal(f"detetive@linuxgame:~$ {user_input}", "command")
+    add_to_terminal(f"detetive@awsgame:~$ {user_input}", "command")
     
     # Validar comando
     if validate_command(user_input):
@@ -501,7 +501,7 @@ def generate_certificate(nome):
         if line == nome.upper():
             font_current = font_name
             color = '#00FF00'
-        elif line == "LINUX GAME":
+        elif line == "AWS CCP GAME":
             font_current = font_name
             color = '#003300'
         else:
@@ -618,7 +618,7 @@ def render_terminal():
     # Prompt atual
     current_cmd = get_current_command()
     if current_cmd and not st.session_state.game_completed:
-        terminal_html += '<span class="terminal-prompt">detetive@linuxgame:~$ </span>'
+        terminal_html += '<span class="terminal-prompt">detetive@awsgame:~$ </span>'
     
     terminal_html += '</div>'
     
@@ -804,7 +804,7 @@ def render_victory_screen():
         st.markdown(
             get_image_download_link(
                 cert_img,
-                f"certificado_linux_game_{st.session_state.nome_jogador.replace(' ', '_')}.png"
+                f"certificado_aws_ccp_game_{st.session_state.nome_jogador.replace(' ', '_')}.png"
             ),
             unsafe_allow_html=True
         )
