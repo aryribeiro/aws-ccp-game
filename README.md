@@ -1,5 +1,3 @@
-# ☁️ AWS CCP GAME 🎮
-
 ![AWS CCP Game](static/logo.png)
 
 ## 📖 Sobre o Projeto
@@ -131,7 +129,7 @@ Ao completar todas as 17 fases e dominar os 224 serviços AWS, você receberá u
 
 ## 🎮 Como Funciona
 
-1. **Digite seu nome** de detetive na tela inicial
+1. **Digite seu nome** de detetive na tela inicial (será usado no certificado)
 2. **Leia a dica** fornecida pela IA sobre o serviço AWS
 3. **Digite o nome do serviço** (ex: EC2, S3, Lambda)
 4. **Pressione ENTER** para validar

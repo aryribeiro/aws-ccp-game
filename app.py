@@ -21,6 +21,19 @@ st.set_page_config(
 # ============================================================================
 
 def inject_custom_css():
+    # Adicionar áudio de fundo em looping usando base64
+    try:
+        with open('static/som.mp3', 'rb') as audio_file:
+            audio_bytes = audio_file.read()
+            audio_base64 = base64.b64encode(audio_bytes).decode()
+            st.markdown(f"""
+            <audio autoplay loop id="background-music">
+                <source src="data:audio/mpeg;base64,{audio_base64}" type="audio/mpeg">
+            </audio>
+            """, unsafe_allow_html=True)
+    except Exception as e:
+        print(f"Erro ao carregar áudio: {e}")
+    
     st.markdown("""
     <style>
         /* Importar fonte monoespaçada */
@@ -457,8 +470,8 @@ def generate_certificate(nome):
         font_name = ImageFont.load_default()
     
     # Desenhar borda
-    draw.rectangle([(20, 20), (width-20, height-20)], outline='#00FF00', width=5)
-    draw.rectangle([(30, 30), (width-30, height-30)], outline='#003300', width=2)
+    draw.rectangle([(20, 20), (width-20, height-20)], outline='#FF6600', width=5)
+    draw.rectangle([(30, 30), (width-30, height-30)], outline='#CC5200', width=2)
     
     # CARREGAR E INSERIR LOGO.PNG NO TOPO
     try:
@@ -500,7 +513,7 @@ def generate_certificate(nome):
     for i, line in enumerate(text_lines):
         if line == nome.upper():
             font_current = font_name
-            color = '#00FF00'
+            color = '#FF6600'
         elif line == "AWS CCP GAME":
             font_current = font_name
             color = '#003300'
