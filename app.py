@@ -413,10 +413,10 @@ def process_command(user_input):
         st.session_state.mostrar_ajuda = False  # Resetar ajuda ao acertar
         
         # Feedback de sucesso - APENAS ELOGIO
-        add_to_terminal("✅ COMANDO CORRETO! Excelente trabalho, Detetive!", "success")
+        add_to_terminal("✅ SERVIÇO AWS CORRETO! Excelente trabalho, Detetive!", "success")
         add_to_terminal("", "text")
         
-        # VERIFICAR SE COMPLETOU TODOS OS 224 COMANDOS
+        # VERIFICAR SE COMPLETOU TODOS OS 224 SERVIÇOS
         if st.session_state.comandos_completados >= 224:
             st.session_state.game_completed = True
             add_to_terminal("", "text")
@@ -443,7 +443,7 @@ def process_command(user_input):
     else:
         # ERRO! - NÃO incrementar input_key para manter o valor no campo
         st.session_state.tentativas_erro += 1
-        add_to_terminal("❌ Comando incorreto!", "error")
+        add_to_terminal("❌ SERVIÇO AWS INCORRETO!", "error")
         add_to_terminal(f"💡 Tente novamente ou clique em 'Pedir Ajuda' no painel lateral.", "error")
         add_to_terminal("", "text")
 
@@ -708,68 +708,86 @@ def render_terminal():
         </script>
         """, height=0)
 
+def get_logo_base64():
+    """Converte logo.png em base64 para embed no HTML"""
+    try:
+        with open('static/logo.png', 'rb') as f:
+            return base64.b64encode(f.read()).decode()
+    except:
+        return ''
+
 def render_welcome_screen():
     """Renderiza a tela inicial de boas-vindas"""
-    
-    # Usar logo.png ao invés de ASCII art
-    try:
-        logo = Image.open('static/logo.png')
-        col1, col2, col3 = st.columns([1, 1, 1])
-        with col2:
-            st.image(logo, width=400)  # 50% do tamanho - fixo em 400px
-    except Exception as e:
-        st.error(f"Erro ao carregar logo: {e}")
-    
-    st.markdown("---")
-    
+
+    logo_b64 = get_logo_base64()
+    logo_html = f'<img src="data:image/png;base64,{logo_b64}" style="width:400px; max-width:100%;"/>' if logo_b64 else ''
+
+    st.markdown(f"""
+    <style>
+        .main {{ background-color: #ffffff !important; }}
+        .welcome-wrapper {{
+            display: flex;
+            justify-content: center;
+            padding: 2rem 1rem 1rem 1rem;
+        }}
+        .welcome-box {{
+            border: 6px solid #FF6600;
+            border-radius: 12px;
+            padding: 2.5rem 3rem;
+            background: #ffffff;
+            width: 100%;
+            max-width: 700px;
+            text-align: center;
+            font-family: sans-serif;
+            color: #222;
+        }}
+        .welcome-box p {{ text-align: left; font-size: 1rem; line-height: 1.7; }}
+        .welcome-box hr {{ border-color: #ddd; margin: 1.2rem 0; }}
+    </style>
+    <div class="welcome-wrapper">
+      <div class="welcome-box">
+        {logo_html}
+        <hr/>
+        <h3>🕵️ BEM-VINDO, DETETIVE!</h3>
+        <p>
+          Você é um <strong>Detetive</strong> convocado para uma missão urgente:<br/><br/>
+          🦹 <strong>O vilão CÁLCULUS</strong> hackeou os sistemas da cidade!<br/><br/>
+          Para capturá-lo, você precisará dominar <strong>224 serviços AWS</strong> através de
+          <strong>17 fases progressivas</strong> repletas de desafios e investigações.<br/><br/>
+          🎯 <strong>Sua missão:</strong><br/>
+          &nbsp;&nbsp;• Aprender sobre os serviços AWS de forma progressiva<br/>
+          &nbsp;&nbsp;• Seguir as pistas deixadas pelo vilão<br/>
+          &nbsp;&nbsp;• Completar todas as fases<br/>
+          &nbsp;&nbsp;• Capturar CÁLCULUS e receber seu certificado!
+        </p>
+        <hr/>
+      </div>
+    </div>
+    """, unsafe_allow_html=True)
+
+    # Widgets Streamlit nativos abaixo do HTML — centralizados via colunas
     col1, col2, col3 = st.columns([1, 2, 1])
-    
     with col2:
-        st.markdown("### 🕵️ BEM-VINDO, DETETIVE!")
-        st.markdown("""
-        Você é um **Detetive** convocado para uma missão urgente:
-        
-        🦹 **O vilão CÁLCULUS** hackeou os sistemas da cidade!
-        
-        Para capturá-lo, você precisará dominar **224 serviços AWS** através de
-        **17 fases progressivas** repletas de desafios e investigações.
-        
-        🎯 **Sua missão:**
-        - Aprender sobre os serviços AWS de forma progressiva
-        - Seguir as pistas deixadas pelo vilão
-        - Completar todas as fases
-        - Capturar CÁLCULUS e receber seu certificado!
-        
-        ---
-        """)
-        
-        nome = st.text_input("🕵️ Digite seu nome de Detetive:", placeholder="Ex: Detetive Silva")
-        
-        st.markdown("")
-        
-        if st.button("🚀 INICIAR MISSÃO", use_container_width=True):
-            if nome.strip():
-                st.session_state.nome_jogador = nome.strip()
-                st.session_state.game_started = True
-                
-                # Adicionar mensagem inicial ao terminal
-                add_to_terminal("=" * 80, "text")
-                add_to_terminal(f"🕵️ DETETIVE {nome.upper()} - MISSÃO INICIADA", "success")
-                add_to_terminal("=" * 80, "text")
-                add_to_terminal("", "text")
-                
-                phase = st.session_state.phases[0]
-                narrative = phase['narrativa'].format(nome=nome)
-                for line in narrative.split('\n'):
-                    add_to_terminal(line, "narrative")
-                
-                add_to_terminal("", "text")
-                add_to_terminal("💻 Digite os nomes dos serviços AWS para avançar na investigação!", "text")
-                add_to_terminal("", "text")
-                
-                st.rerun()
-            else:
-                st.error("⚠️ Por favor, digite seu nome para começar!")
+        _, c, _ = st.columns([1, 2, 1])
+        with c:
+            nome = st.text_input("Digite seu nome de Detetive:", placeholder="Ex: Detetive Silva")
+            if st.button("🚀 INICIAR MISSÃO", use_container_width=True):
+                if nome.strip():
+                    st.session_state.nome_jogador = nome.strip()
+                    st.session_state.game_started = True
+                    add_to_terminal("=" * 80, "text")
+                    add_to_terminal(f"🕵️ DETETIVE {nome.upper()} - MISSÃO INICIADA", "success")
+                    add_to_terminal("=" * 80, "text")
+                    add_to_terminal("", "text")
+                    phase = st.session_state.phases[0]
+                    for line in phase['narrativa'].format(nome=nome).split('\n'):
+                        add_to_terminal(line, "narrative")
+                    add_to_terminal("", "text")
+                    add_to_terminal("💻 Digite os nomes dos serviços AWS para avançar na investigação!", "text")
+                    add_to_terminal("", "text")
+                    st.rerun()
+                else:
+                    st.error("⚠️ Por favor, digite seu nome para começar!")
 
 def render_victory_screen():
     """Renderiza a tela de vitória e certificado"""
