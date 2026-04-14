@@ -209,29 +209,6 @@ Este projeto é de código aberto e está disponível para uso educacional.
 
 ---
 
-## 👨‍💻 Autor
-
-**Ary Ribeiro**
-
-- 📧 Email: [aryribeiro@gmail.com](mailto:aryribeiro@gmail.com)
-- 🌐 LinkedIn: [@aryribeiro](https://linkedin.com/in/aryribeiro)
-- 🐙 GitHub: [@aryribeiro](https://github.com/aryribeiro)
-
----
-
-## 🙏 Agradecimentos
-
-- AWS pela documentação completa dos serviços
-- Comunidade Streamlit pelo framework incrível
-- Todos os jogadores que testaram e deram feedback
-
----
-
-## 📸 Screenshots
-
-### Tela Inicial
-![Tela Inicial](static/logo.png)
-
 ### Terminal de Jogo
 Interface estilo MS-DOS com feedback em tempo real
 
@@ -251,29 +228,21 @@ Certificado digital personalizado ao completar o jogo
 
 ## 🎯 Objetivo Educacional
 
-Este jogo foi desenvolvido para ajudar estudantes e profissionais a:
+Este jogo foi desenvolvido para ajudar estudantes e iniciantes AWS a:
 
 - ✅ Memorizar os principais serviços AWS
 - ✅ Entender as categorias de serviços
-- ✅ Preparar-se para certificações AWS (CCP, SAA, etc.)
+- ✅ Preparar-se para certificação AWS CCP
 - ✅ Aprender de forma gamificada e divertida
 - ✅ Ter uma visão geral do ecossistema AWS
 
 ---
 
-## 📚 Recursos Adicionais
-
-- [AWS Documentation](https://docs.aws.amazon.com/)
-- [AWS Training](https://aws.amazon.com/training/)
-- [AWS Certification](https://aws.amazon.com/certification/)
-- [AWS Free Tier](https://aws.amazon.com/free/)
-
----
-
-<div align="center">
-
 **⭐ Se este projeto te ajudou, deixe uma estrela no GitHub! ⭐**
 
-**Feito com ❤️ e ☕ por Ary Ribeiro**
 
-</div>
+**Ary Ribeiro**
+
+- 📧 Email: [aryribeiro@gmail.com](mailto:aryribeiro@gmail.com)
+- 🌐 LinkedIn: [@aryribeiro](https://linkedin.com/in/aryribeiro)
+- 🐙 GitHub: [@aryribeiro](https://github.com/aryribeiro)

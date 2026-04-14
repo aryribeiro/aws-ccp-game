@@ -923,6 +923,6 @@ st.markdown("""
 <div style="text-align: center;">
     <h4>☁️ AWS CCP GAME 🎮</h4>
     🧠 Memorize os nomes dos serviços AWS em ambiente gamificado - Por <strong>Ary Ribeiro</strong>: <a href="mailto:aryribeiro@gmail.com">aryribeiro@gmail.com</a><br>
-    <em>Obs.: foi testado apenas em computador - Emita seu certificado de 4 horas no final</em>
+    <em>Obs.: testado apenas em computador - Emita seu certificado de 4 horas no final</em>
 </div>
 """, unsafe_allow_html=True)
