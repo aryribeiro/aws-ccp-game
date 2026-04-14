@@ -68,7 +68,7 @@ http://localhost:8501
 
 ## 🎯 Fases do Jogo
 
-| Fase | Nome | Comandos |
+| Fase | Nome | Serviços |
 |------|------|----------|
 | 1 | Entrando na Nuvem | 10 |
 | 2 | Poder de Computação | 10 |
