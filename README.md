@@ -24,17 +24,11 @@ Você é um **Detetive** convocado para capturar o vilão **CÁLCULUS**, que hac
 
 ---
 
-## 🚀 Como Jogar
-
-### Online (Recomendado)
-
-Acesse: [https://aws-ccp-game.streamlit.app/](https://aws-ccp-game.streamlit.app/)
-
-### Localmente
+## 🚀 Como Jogar Localmente
 
 1. **Clone o repositório:**
 ```bash
-git clone https://github.com/SEU_USUARIO/aws-ccp-game.git
+git clone https://github.com/aryribeiro/aws-ccp-game.git
 cd aws-ccp-game
 ```
 
@@ -76,23 +70,23 @@ http://localhost:8501
 
 | Fase | Nome | Comandos |
 |------|------|----------|
-| 1 | Primeiros Passos no Terminal | 10 |
-| 2 | Investigando Arquivos | 10 |
-| 3 | Manipulação Avançada | 10 |
-| 4 | Gerenciamento de Processos | 10 |
-| 5 | Conexões de Rede | 10 |
-| 6 | Busca e Pesquisa | 10 |
-| 7 | Informações do Sistema | 10 |
-| 8 | Compactação e Arquivos | 10 |
-| 9 | Rede Avançada | 10 |
-| 10 | Instalação de Software | 10 |
-| 11 | Hardware e Arquitetura | 10 |
-| 12 | Armazenamento e Discos | 10 |
-| 13 | Informações Detalhadas | 10 |
-| 14 | Data e Hora | 10 |
-| 15 | Controle de Sistema | 10 |
-| 16 | Navegação Avançada e Permissões | 20 |
-| 17 | CONFRONTO FINAL | 54 |
+| 1 | Entrando na Nuvem | 10 |
+| 2 | Poder de Computação | 10 |
+| 3 | Cofre de Dados | 10 |
+| 4 | Bases de Conhecimento | 10 |
+| 5 | Conectando o Mundo | 10 |
+| 6 | Fortaleza Digital | 10 |
+| 7 | Mineração de Insights | 10 |
+| 8 | Inteligência Artificial | 10 |
+| 9 | Automação Total | 10 |
+| 10 | Containers em Ação | 10 |
+| 11 | Sem Servidores | 10 |
+| 12 | Jornada para a Nuvem | 10 |
+| 13 | Internet das Coisas | 10 |
+| 14 | Streaming de Mídia | 10 |
+| 15 | Olhos na Infraestrutura | 10 |
+| 16 | Serviços Avançados | 20 |
+| 17 | DOMÍNIO COMPLETO DA AWS | 54 |
 
 **Total: 224 Serviços AWS**
 
@@ -121,8 +115,6 @@ aws-ccp-game/
 ├── README.md                 # Documentação
 └── .gitignore               # Arquivos ignorados pelo Git
 ```
-
----
 
 ## 🎓 Certificado
 

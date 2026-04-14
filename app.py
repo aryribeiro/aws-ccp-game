@@ -212,88 +212,88 @@ def create_phases(commands):
     
     phases = [
         {
-            "nome": "Primeiros Passos no Terminal",
-            "narrativa": "🕵️ Detetive {nome}, você acaba de receber um chamado urgente!\n🦹 O vilão CÁLCULUS hackeou os sistemas da cidade e está deixando pistas em servidores Linux.\n🎯 MISSÃO: Dominar os comandos básicos para rastrear o vilão!",
+            "nome": "Entrando na Nuvem",
+            "narrativa": "🕵️ Detetive {nome}, você acaba de receber um chamado urgente!\n🦹 O vilão CÁLCULUS hackeou os sistemas da cidade e está deixando pistas em servidores na nuvem.\n🎯 MISSÃO: Dominar os serviços fundamentais da AWS para rastrear o vilão!",
             "comandos": commands[0:10]
         },
         {
-            "nome": "Investigando Arquivos",
-            "narrativa": "🔍 Ótimo trabalho! Você encontrou o primeiro servidor comprometido.\n📂 Há arquivos suspeitos espalhados. Precisamos analisá-los!\n🎯 MISSÃO: Aprenda a visualizar e manipular arquivos.",
+            "nome": "Poder de Computação",
+            "narrativa": "⚡ Ótimo trabalho! Você encontrou o primeiro servidor comprometido.\n💻 CÁLCULUS está usando instâncias de computação para seus ataques.\n🎯 MISSÃO: Aprenda os serviços de computação da AWS.",
             "comandos": commands[10:20]
         },
         {
-            "nome": "Manipulação Avançada",
-            "narrativa": "💾 CÁLCULUS deixou arquivos criptografados!\n🔐 Precisamos copiar, mover e criar links para preservar evidências.\n🎯 MISSÃO: Domine operações avançadas com arquivos.",
+            "nome": "Cofre de Dados",
+            "narrativa": "💾 CÁLCULUS deixou dados criptografados espalhados!\n🔐 Precisamos entender os serviços de armazenamento para preservar evidências.\n🎯 MISSÃO: Domine os serviços de storage da AWS.",
             "comandos": commands[20:30]
         },
         {
-            "nome": "Gerenciamento de Processos",
-            "narrativa": "⚡ Detectamos processos maliciosos rodando no sistema!\n🎭 CÁLCULUS está executando scripts em segundo plano.\n🎯 MISSÃO: Aprenda a monitorar e encerrar processos.",
+            "nome": "Bases de Conhecimento",
+            "narrativa": "🗄️ Detectamos bancos de dados maliciosos rodando!\n📊 CÁLCULUS está armazenando informações roubadas em databases.\n🎯 MISSÃO: Aprenda os serviços de banco de dados da AWS.",
             "comandos": commands[30:40]
         },
         {
-            "nome": "Conexões de Rede",
-            "narrativa": "🌐 Encontramos atividade de rede suspeita!\n📡 CÁLCULUS está se conectando a servidores remotos.\n🎯 MISSÃO: Domine comandos de SSH e conectividade.",
+            "nome": "Conectando o Mundo",
+            "narrativa": "🌐 Encontramos atividade de rede suspeita!\n📡 CÁLCULUS está se conectando a servidores em todo o mundo.\n🎯 MISSÃO: Domine os serviços de rede e CDN da AWS.",
             "comandos": commands[40:50]
         },
         {
-            "nome": "Busca e Pesquisa",
-            "narrativa": "🔎 As pistas estão espalhadas em centenas de arquivos!\n📋 Precisamos usar buscas avançadas para encontrar evidências.\n🎯 MISSÃO: Aprenda grep, locate e find.",
+            "nome": "Fortaleza Digital",
+            "narrativa": "🔒 A segurança foi comprometida!\n🛡️ Precisamos entender os serviços de segurança para proteger os sistemas.\n🎯 MISSÃO: Aprenda os serviços de segurança e identidade da AWS.",
             "comandos": commands[50:60]
         },
         {
-            "nome": "Informações do Sistema",
-            "narrativa": "🖥️ Precisamos conhecer o terreno!\n📊 Vamos coletar informações sobre o sistema comprometido.\n🎯 MISSÃO: Domine comandos de diagnóstico.",
+            "nome": "Mineração de Insights",
+            "narrativa": "📊 As pistas estão escondidas em terabytes de dados!\n🔍 Precisamos usar analytics para encontrar padrões.\n🎯 MISSÃO: Domine os serviços de análise de dados da AWS.",
             "comandos": commands[60:70]
         },
         {
-            "nome": "Compactação e Arquivos",
-            "narrativa": "📦 CÁLCULUS escondeu dados em arquivos compactados!\n🗜️ Precisamos extrair e analisar esses pacotes.\n🎯 MISSÃO: Aprenda tar, gzip e compactação.",
+            "nome": "Inteligência Artificial",
+            "narrativa": "🤖 CÁLCULUS está usando IA contra nós!\n🧠 Vamos usar machine learning para prever seus próximos passos.\n🎯 MISSÃO: Aprenda os serviços de ML e IA da AWS.",
             "comandos": commands[70:80]
         },
         {
-            "nome": "Rede Avançada",
-            "narrativa": "🌐 Rastreamento de rede em andamento!\n🔌 Vamos investigar conexões e portas abertas.\n🎯 MISSÃO: Domine ping, whois, dig e wget.",
+            "nome": "Automação Total",
+            "narrativa": "⚙️ Precisamos automatizar nossa resposta!\n🚀 CÁLCULUS está usando DevOps para atacar rapidamente.\n🎯 MISSÃO: Domine os serviços de DevOps e automação da AWS.",
             "comandos": commands[80:90]
         },
         {
-            "nome": "Instalação de Software",
-            "narrativa": "💿 Precisamos instalar ferramentas forenses!\n🛠️ CÁLCULUS modificou pacotes do sistema.\n🎯 MISSÃO: Aprenda dpkg, rpm e compilação.",
+            "nome": "Containers em Ação",
+            "narrativa": "📦 CÁLCULUS escondeu malware em containers!\n🐳 Precisamos entender orquestração de containers.\n🎯 MISSÃO: Aprenda os serviços de containers da AWS.",
             "comandos": commands[90:100]
         },
         {
-            "nome": "Hardware e Arquitetura",
-            "narrativa": "🔧 Análise forense do hardware!\n💻 Vamos identificar todos os componentes do sistema.\n🎯 MISSÃO: Domine comandos de diagnóstico de hardware.",
+            "nome": "Sem Servidores",
+            "narrativa": "⚡ Rastreamento serverless em andamento!\n🔌 O vilão está usando funções sem servidor para se esconder.\n🎯 MISSÃO: Domine os serviços serverless da AWS.",
             "comandos": commands[100:110]
         },
         {
-            "nome": "Armazenamento e Discos",
-            "narrativa": "💾 Investigação de discos e partições!\n📊 CÁLCULUS pode ter escondido dados em partições ocultas.\n🎯 MISSÃO: Aprenda df, du e análise de espaço.",
+            "nome": "Jornada para a Nuvem",
+            "narrativa": "🚚 CÁLCULUS está migrando dados roubados!\n📦 Vamos interceptar usando serviços de migração.\n🎯 MISSÃO: Aprenda os serviços de migração e transferência da AWS.",
             "comandos": commands[110:120]
         },
         {
-            "nome": "Informações Detalhadas",
-            "narrativa": "🔬 Análise profunda do sistema!\n📡 Vamos coletar informações sobre rede, dispositivos e processos.\n🎯 MISSÃO: Domine lspci, lsusb e proc.",
+            "nome": "Internet das Coisas",
+            "narrativa": "🌐 Dispositivos IoT foram hackeados!\n📡 CÁLCULUS está controlando milhares de dispositivos conectados.\n🎯 MISSÃO: Domine os serviços de IoT da AWS.",
             "comandos": commands[120:130]
         },
         {
-            "nome": "Data e Hora",
-            "narrativa": "⏰ Precisamos estabelecer uma linha do tempo!\n📅 Quando CÁLCULUS atacou? Vamos investigar logs de tempo.\n🎯 MISSÃO: Aprenda date, cal e uptime.",
+            "nome": "Streaming de Mídia",
+            "narrativa": "🎬 O vilão está transmitindo mensagens criptografadas!\n📺 Precisamos interceptar os streams de vídeo e áudio.\n🎯 MISSÃO: Aprenda os serviços de mídia da AWS.",
             "comandos": commands[130:140]
         },
         {
-            "nome": "Controle de Sistema",
-            "narrativa": "🔴 Sistema crítico! Aprenda a controlar o desligamento.\n⚡ Precisamos reiniciar servidores com segurança.\n🎯 MISSÃO: Domine shutdown, reboot e halt.",
+            "nome": "Olhos na Infraestrutura",
+            "narrativa": "👁️ Precisamos monitorar tudo!\n📊 CÁLCULUS pode atacar a qualquer momento.\n🎯 MISSÃO: Domine os serviços de monitoramento e observabilidade da AWS.",
             "comandos": commands[140:150]
         },
         {
-            "nome": "Navegação Avançada e Permissões",
-            "narrativa": "🗂️ Navegação avançada necessária!\n🔐 CÁLCULUS modificou permissões de arquivos críticos.\n🎯 MISSÃO: Domine navegação e sistema de permissões.",
+            "nome": "Serviços Avançados",
+            "narrativa": "🔬 Análise profunda necessária!\n🎯 CÁLCULUS está usando serviços especializados e avançados.\n🎯 MISSÃO: Domine os serviços especializados da AWS.",
             "comandos": commands[150:170]
         },
         {
-            "nome": "CONFRONTO FINAL",
-            "narrativa": "🚨 ALERTA MÁXIMO! Você está no servidor principal de CÁLCULUS!\n🦹 Este é o confronto final! Ele deixou os comandos mais complexos como última defesa.\n🎯 MISSÃO FINAL: Prove que você é um mestre Linux!",
+            "nome": "DOMÍNIO COMPLETO DA AWS",
+            "narrativa": "🚨 ALERTA MÁXIMO! Você está no servidor principal de CÁLCULUS!\n🦹 Este é o confronto final! Ele deixou os serviços mais complexos como última defesa.\n🎯 MISSÃO FINAL: Prove que você domina completamente a AWS!",
             "comandos": commands[170:] if len(commands) > 170 else []
         }
     ]
@@ -488,7 +488,7 @@ def generate_certificate(nome):
         f"Certifico que:",
         f"{nome.upper()}",
         f"concluiu com êxito o treinamento em ambiente gamificado",
-        f"AWS CCP GAME | https://aws-ccp.streamlit.app/",
+        f"AWS CCP GAME | https://ccpgame.streamlit.app/",
         f"",
         f"Carga horária estimada: 4 horas",
         f"Data de conclusão: {datetime.now().strftime('%d/%m/%Y')}",
