@@ -592,7 +592,7 @@ def render_sidebar():
                 if st.session_state.mostrar_ajuda:
                     st.markdown("#### ⚠️ Resposta:")
                     st.code(current_cmd['comando'], language='bash')
-                    st.warning("⚠️ Tente memorizar este comando!")
+                    st.warning("⚠️ Tente memorizar o nome do serviço!")
                 else:
                     st.markdown("#### 🤔 Desafio:")
                     st.markdown("Leia a **dica acima** e tente lembrar qual serviço AWS você deve usar.")
