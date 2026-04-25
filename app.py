@@ -507,9 +507,9 @@ def generate_certificate(nome):
         font_text = ImageFont.load_default()
         font_name = ImageFont.load_default()
     
-    # Desenhar borda
-    draw.rectangle([(20, 20), (width-20, height-20)], outline='#FF6600', width=5)
-    draw.rectangle([(30, 30), (width-30, height-30)], outline='#CC5200', width=2)
+    # Desenhar borda - usando laranja oficial da AWS (#FF9900)
+    draw.rectangle([(20, 20), (width-20, height-20)], outline='#FF9900', width=5)
+    draw.rectangle([(30, 30), (width-30, height-30)], outline='#CC7A00', width=2)
     
     # CARREGAR E INSERIR LOGO.PNG NO TOPO
     try:
@@ -532,7 +532,7 @@ def generate_certificate(nome):
     title = "CERTIFICADO DE CONCLUSÃO"
     title_bbox = draw.textbbox((0, 0), title, font=font_title)
     title_width = title_bbox[2] - title_bbox[0]
-    draw.text(((width - title_width) / 2, y_start), title, fill='#003300', font=font_title)
+    draw.text(((width - title_width) / 2, y_start), title, fill='#000000', font=font_title)  # Preto como o texto CCP da logo
     
     # Texto principal
     text_lines = [
@@ -551,10 +551,10 @@ def generate_certificate(nome):
     for i, line in enumerate(text_lines):
         if line == nome.upper():
             font_current = font_name
-            color = '#FF6600'
+            color = '#FF9900'  # Laranja oficial da AWS (mesmo tom da logo)
         elif line == "AWS CCP GAME":
             font_current = font_name
-            color = '#003300'
+            color = '#000000'  # Preto como o texto CCP da logo
         else:
             font_current = font_text
             color = '#000000'
@@ -567,14 +567,14 @@ def generate_certificate(nome):
     # CARREGAR E INSERIR ASSINATURA.PNG NO RODAPÉ
     try:
         assinatura = Image.open('static/assinatura.png')
-        # Redimensionar assinatura
-        assin_width = 250
+        # Redimensionar assinatura - aumentada para 500px de largura
+        assin_width = 500
         assin_ratio = assin_width / assinatura.size[0]
         assin_height = int(assinatura.size[1] * assin_ratio)
         assin_resized = assinatura.resize((assin_width, assin_height), Image.Resampling.LANCZOS)
-        # Centralizar assinatura
+        # Centralizar assinatura próxima ao rodapé
         assin_x = (width - assin_width) // 2
-        assin_y = height - 150
+        assin_y = height - assin_height - 40  # Posiciona 40px acima do rodapé (mais próxima)
         img.paste(assin_resized, (assin_x, assin_y), assin_resized if assin_resized.mode == 'RGBA' else None)
     except Exception as e:
         print(f"Erro ao carregar assinatura: {e}")
@@ -830,6 +830,9 @@ def render_welcome_screen():
 def render_victory_screen():
     """Renderiza a tela de vitória e certificado"""
     
+    # Celebração com balões ao completar o jogo
+    st.balloons()
+    
     # Usar logo.png na tela de vitória também
     try:
         logo = Image.open('static/logo.png')
@@ -944,10 +947,6 @@ def main():
         # JOGO EM ANDAMENTO
         render_sidebar()
         render_terminal()
-        
-        # Easter egg - comandos especiais
-        if st.session_state.comandos_completados == 85:  # Metade do jogo
-            st.balloons()
 
 # ============================================================================
 # 10. EXECUÇÃO
