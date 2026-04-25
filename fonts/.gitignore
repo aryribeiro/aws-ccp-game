@@ -1,0 +1,8 @@
+# Ignorar todas as fontes
+*.ttf
+*.otf
+*.woff
+*.woff2
+
+# Exceto o README
+!README.md

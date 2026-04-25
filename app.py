@@ -459,12 +459,50 @@ def generate_certificate(nome):
     img = Image.new('RGB', (width, height), color='white')
     draw = ImageDraw.Draw(img)
     
-    # Tentar carregar fontes (fallback para fonte padrão)
-    try:
-        font_title = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 48)
-        font_text = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf", 24)
-        font_name = ImageFont.truetype("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", 36)
-    except:
+    # Tentar carregar fontes com suporte a Windows, Linux e Streamlit Cloud
+    font_title = None
+    font_text = None
+    font_name = None
+    
+    # Lista de fontes para tentar (ordem de prioridade)
+    font_paths = [
+        # Fontes locais do projeto (PRIORIDADE MÁXIMA)
+        ("fonts/DejaVuSans-Bold.ttf", "fonts/DejaVuSans.ttf"),
+        ("fonts/LiberationSans-Bold.ttf", "fonts/LiberationSans-Regular.ttf"),
+        ("fonts/Roboto-Bold.ttf", "fonts/Roboto-Regular.ttf"),
+        # Linux (Streamlit Cloud, Ubuntu, Debian)
+        ("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"),
+        ("/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf", "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf"),
+        # Windows
+        ("C:/Windows/Fonts/arialbd.ttf", "C:/Windows/Fonts/arial.ttf"),
+        ("C:/Windows/Fonts/calibrib.ttf", "C:/Windows/Fonts/calibri.ttf"),
+        # Alternativas Linux
+        ("/usr/share/fonts/truetype/freefont/FreeSansBold.ttf", "/usr/share/fonts/truetype/freefont/FreeSans.ttf"),
+    ]
+    
+    for bold_path, regular_path in font_paths:
+        try:
+            font_title = ImageFont.truetype(bold_path, 48)
+            font_text = ImageFont.truetype(regular_path, 24)
+            font_name = ImageFont.truetype(bold_path, 36)
+            break
+        except:
+            continue
+    
+    # Se nenhuma fonte foi carregada, tentar fallbacks genéricos
+    if font_title is None:
+        fallback_fonts = ["DejaVuSans-Bold.ttf", "DejaVuSans.ttf", "arial.ttf", "Arial.ttf"]
+        for font_file in fallback_fonts:
+            try:
+                font_title = ImageFont.truetype(font_file, 48)
+                font_text = ImageFont.truetype(font_file.replace("Bold", "").replace("-", ""), 24)
+                font_name = ImageFont.truetype(font_file, 36)
+                break
+            except:
+                continue
+    
+    # Último recurso: fonte bitmap padrão (não recomendado, mas funcional)
+    if font_title is None:
         font_title = ImageFont.load_default()
         font_text = ImageFont.load_default()
         font_name = ImageFont.load_default()
