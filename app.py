@@ -4,6 +4,7 @@ from datetime import datetime
 from PIL import Image, ImageDraw, ImageFont
 import io
 import base64
+import os
 
 # ============================================================================
 # 1. CONFIGURAÇÃO STREAMLIT
@@ -923,6 +924,60 @@ def render_victory_screen():
 
 def main():
     """Função principal da aplicação"""
+    
+    # ========================================================================
+    # MODO ADMIN SECRETO - Gerar certificado sem jogar
+    # Acesse: https://ccpgame.streamlit.app/?admin=true&nome=Seu+Nome
+    # ========================================================================
+    query_params = st.query_params
+    
+    if query_params.get("admin") == "true":
+        st.markdown("### 🔧 MODO ADMIN - Gerador de Certificados")
+        st.markdown("---")
+        
+        # Pegar nome da URL ou usar input
+        nome_url = query_params.get("nome", "")
+        
+        col1, col2 = st.columns([3, 1])
+        with col1:
+            nome_teste = st.text_input("Nome para o certificado:", value=nome_url, key="admin_nome")
+        with col2:
+            st.write("")
+            st.write("")
+            gerar = st.button("🎓 Gerar Certificado", type="primary")
+        
+        if gerar and nome_teste:
+            with st.spinner("Gerando certificado..."):
+                img = generate_certificate(nome_teste)
+                
+                # Mostrar certificado
+                st.image(img, caption=f"Certificado de {nome_teste}", use_container_width=True)
+                
+                # Link de download
+                filename = f"certificado_aws_ccp_game_{nome_teste.lower().replace(' ', '_')}.png"
+                st.markdown(get_image_download_link(img, filename), unsafe_allow_html=True)
+                
+                st.success("✅ Certificado gerado com sucesso!")
+                
+                # Informações de debug
+                with st.expander("🔍 Informações de Debug"):
+                    st.write("Sistema operacional:", "Linux" if os.name == 'posix' else "Windows")
+                    st.write("Tamanho da imagem:", img.size)
+                    st.write("Modo da imagem:", img.mode)
+        
+        st.markdown("---")
+        st.info("💡 **Dica:** Use `?admin=true&nome=Seu+Nome` na URL para pré-preencher o nome")
+        
+        # Botão para voltar ao jogo
+        if st.button("🎮 Voltar ao Jogo"):
+            st.query_params.clear()
+            st.rerun()
+        
+        return  # Não executar o resto do app
+    
+    # ========================================================================
+    # FLUXO NORMAL DO JOGO
+    # ========================================================================
     
     # Injetar CSS customizado
     inject_custom_css()
