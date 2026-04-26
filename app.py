@@ -544,7 +544,7 @@ def generate_certificate(nome):
         f"Domínio de 224 serviços AWS!",
     ]
     
-    y_position = y_start + 80  # Aumentado de 70 para 80
+    y_position = y_start + 70
     for i, line in enumerate(text_lines):
         if line == nome.upper():
             font_current = font_name
@@ -559,7 +559,7 @@ def generate_certificate(nome):
         bbox = draw.textbbox((0, 0), line, font=font_current)
         text_width = bbox[2] - bbox[0]
         draw.text(((width - text_width) / 2, y_position), line, fill=color, font=font_current)
-        y_position += 55 if line == nome.upper() or line == "AWS CCP GAME" else 40  # Aumentado espaçamento
+        y_position += 50 if line == nome.upper() or line == "AWS CCP GAME" else 35
     
     # CARREGAR E INSERIR ASSINATURA.PNG NO RODAPÉ
     try:
