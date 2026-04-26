@@ -459,50 +459,48 @@ def generate_certificate(nome):
     img = Image.new('RGB', (width, height), color='white')
     draw = ImageDraw.Draw(img)
     
-    # Tentar carregar fontes com suporte a Windows, Linux e Streamlit Cloud
+    # Carregar fontes - GARANTIR que funcione no Streamlit Cloud
+    import os
+    
+    # Detectar sistema operacional
+    is_linux = os.name == 'posix'
+    is_windows = os.name == 'nt'
+    
     font_title = None
     font_text = None
     font_name = None
     
-    # Lista de fontes para tentar (ordem de prioridade)
-    font_paths = [
-        # Fontes locais do projeto (PRIORIDADE MÁXIMA)
-        ("fonts/DejaVuSans-Bold.ttf", "fonts/DejaVuSans.ttf"),
-        ("fonts/LiberationSans-Bold.ttf", "fonts/LiberationSans-Regular.ttf"),
-        ("fonts/Roboto-Bold.ttf", "fonts/Roboto-Regular.ttf"),
-        # Linux (Streamlit Cloud, Ubuntu, Debian)
-        ("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"),
-        ("/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf", "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf"),
-        # Windows
-        ("C:/Windows/Fonts/arialbd.ttf", "C:/Windows/Fonts/arial.ttf"),
-        ("C:/Windows/Fonts/calibrib.ttf", "C:/Windows/Fonts/calibri.ttf"),
-        # Alternativas Linux
-        ("/usr/share/fonts/truetype/freefont/FreeSansBold.ttf", "/usr/share/fonts/truetype/freefont/FreeSans.ttf"),
-    ]
+    # Caminhos de fontes por sistema (Linux tem prioridade para Streamlit Cloud)
+    if is_linux:
+        font_paths = [
+            ("/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf", "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf"),
+            ("/usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf", "/usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf"),
+            ("/usr/share/fonts/truetype/liberation2/LiberationSans-Bold.ttf", "/usr/share/fonts/truetype/liberation2/LiberationSans-Regular.ttf"),
+            ("/usr/share/fonts/truetype/freefont/FreeSansBold.ttf", "/usr/share/fonts/truetype/freefont/FreeSans.ttf"),
+        ]
+    else:  # Windows
+        font_paths = [
+            ("C:/Windows/Fonts/arialbd.ttf", "C:/Windows/Fonts/arial.ttf"),
+            ("C:/Windows/Fonts/calibrib.ttf", "C:/Windows/Fonts/calibri.ttf"),
+        ]
     
+    # Tentar carregar fontes TrueType
     for bold_path, regular_path in font_paths:
         try:
-            font_title = ImageFont.truetype(bold_path, 48)
-            font_text = ImageFont.truetype(regular_path, 24)
-            font_name = ImageFont.truetype(bold_path, 36)
-            break
-        except:
+            if os.path.exists(bold_path) and os.path.exists(regular_path):
+                font_title = ImageFont.truetype(bold_path, 60)  # Aumentado para garantir visibilidade
+                font_text = ImageFont.truetype(regular_path, 28)
+                font_name = ImageFont.truetype(bold_path, 44)
+                st.write(f"✓ Fontes carregadas: {os.path.basename(bold_path)}")
+                break
+        except Exception as e:
+            st.write(f"⚠ Erro ao carregar {bold_path}: {str(e)}")
             continue
     
-    # Se nenhuma fonte foi carregada, tentar fallbacks genéricos
+    # FALLBACK CRÍTICO: Se falhar, usar fonte default mas avisar
     if font_title is None:
-        fallback_fonts = ["DejaVuSans-Bold.ttf", "DejaVuSans.ttf", "arial.ttf", "Arial.ttf"]
-        for font_file in fallback_fonts:
-            try:
-                font_title = ImageFont.truetype(font_file, 48)
-                font_text = ImageFont.truetype(font_file.replace("Bold", "").replace("-", ""), 24)
-                font_name = ImageFont.truetype(font_file, 36)
-                break
-            except:
-                continue
-    
-    # Último recurso: fonte bitmap padrão (não recomendado, mas funcional)
-    if font_title is None:
+        st.error("⚠️ AVISO: Fontes TrueType não encontradas. Certificado pode ter texto pequeno.")
+        st.write("Sistema detectado:", "Linux" if is_linux else "Windows")
         font_title = ImageFont.load_default()
         font_text = ImageFont.load_default()
         font_name = ImageFont.load_default()
@@ -547,7 +545,7 @@ def generate_certificate(nome):
         f"Domínio de 224 serviços AWS!",
     ]
     
-    y_position = y_start + 70
+    y_position = y_start + 80  # Aumentado de 70 para 80
     for i, line in enumerate(text_lines):
         if line == nome.upper():
             font_current = font_name
@@ -562,7 +560,7 @@ def generate_certificate(nome):
         bbox = draw.textbbox((0, 0), line, font=font_current)
         text_width = bbox[2] - bbox[0]
         draw.text(((width - text_width) / 2, y_position), line, fill=color, font=font_current)
-        y_position += 50 if line == nome.upper() or line == "AWS CCP GAME" else 35
+        y_position += 55 if line == nome.upper() or line == "AWS CCP GAME" else 40  # Aumentado espaçamento
     
     # CARREGAR E INSERIR ASSINATURA.PNG NO RODAPÉ
     try:
