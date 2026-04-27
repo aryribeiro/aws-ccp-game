@@ -1,3 +1,4 @@
+Obs.: caso o app esteja no modo "sleeping" (dormindo) ao entrar, basta clicar no botão que estará disponível e aguardar, para ativar o mesmo. É um comportamento normal, do Streamlit Cloud.
 ![AWS CCP Game](static/logo.png)
 
 ## 📖 Sobre o Projeto
