@@ -2,23 +2,24 @@
 
 ## 📖 Sobre o Projeto
 
-**AWS CCP Game** é um jogo educacional gamificado desenvolvido para ensinar **224 serviços AWS** de forma interativa e divertida através de uma narrativa de detetive.
+**AWS CCP Game** é um jogo educacional gamificado desenvolvido para ensinar **235 serviços AWS** de forma interativa e divertida através de uma narrativa de detetive.
 
 ### 🎯 Objetivo
 
-Você é um **Detetive** convocado para capturar o vilão **CÁLCULUS**, que hackeou os sistemas da cidade. Para capturá-lo, você precisará dominar 224 serviços AWS através de 17 fases progressivas repletas de desafios.
+Você é um **Detetive** convocado para capturar o vilão **CÁLCULUS**, que hackeou os sistemas da cidade. Para capturá-lo, você precisará dominar 235 serviços AWS através de 23 fases progressivas organizadas pelas categorias oficiais da AWS 2026.
 
 ---
 
 ## ✨ Características
 
-- 🎮 **17 Fases Temáticas** com narrativa progressiva
-- ☁️ **224 Serviços AWS** para memorizar
+- 🎮 **23 Fases Oficiais** organizadas pelas categorias AWS 2026
+- ☁️ **235 Serviços AWS** para memorizar
 - 🤖 **Sistema de Dicas com IA** - Ajuda quando necessário
 - 🖥️ **Interface Terminal MS-DOS** - Visual retrô nostálgico
 - 🎓 **Certificado Digital** - Emitido ao completar o jogo
 - 📊 **Barra de Progresso** - Acompanhe sua evolução
 - 💾 **Validação Inteligente** - Case-insensitive
+- 🎯 **Sem Spoilers** - Siglas não reveladas nas descrições
 
 ---
 
@@ -64,29 +65,35 @@ http://localhost:8501
 
 ---
 
-## 🎯 Fases do Jogo
+## 🎯 Fases do Jogo (Categorias Oficiais AWS 2026)
 
-| Fase | Nome | Serviços |
-|------|------|----------|
-| 1 | Entrando na Nuvem | 10 |
-| 2 | Poder de Computação | 10 |
-| 3 | Cofre de Dados | 10 |
-| 4 | Bases de Conhecimento | 10 |
-| 5 | Conectando o Mundo | 10 |
-| 6 | Fortaleza Digital | 10 |
-| 7 | Mineração de Insights | 10 |
-| 8 | Inteligência Artificial | 10 |
-| 9 | Automação Total | 10 |
-| 10 | Containers em Ação | 10 |
-| 11 | Sem Servidores | 10 |
-| 12 | Jornada para a Nuvem | 10 |
-| 13 | Internet das Coisas | 10 |
-| 14 | Streaming de Mídia | 10 |
-| 15 | Olhos na Infraestrutura | 10 |
-| 16 | Serviços Avançados | 20 |
-| 17 | DOMÍNIO COMPLETO DA AWS | 54 |
+| Fase | Categoria Oficial | Serviços |
+|------|-------------------|----------|
+| 1 | Computação | 11 |
+| 2 | Contêineres | 4 |
+| 3 | Armazenamento | 8 |
+| 4 | Banco de Dados | 10 |
+| 5 | Migração e Transferência | 10 |
+| 6 | Redes e Entrega de Conteúdo | 12 |
+| 7 | Ferramentas do Desenvolvedor | 16 |
+| 8 | Capacitação do Cliente | 5 |
+| 9 | Blockchain | 1 |
+| 10 | Satélite | 1 |
+| 11 | Quantum Technologies | 1 |
+| 12 | Gerenciamento e Governança | 29 |
+| 13 | Serviços de Mídia | 11 |
+| 14 | Machine Learning | 28 |
+| 15 | Análise de Dados | 20 |
+| 16 | Segurança, Identidade e Conformidade | 26 |
+| 17 | Cloud Financial Management | 3 |
+| 18 | Dispositivos Móveis | 4 |
+| 19 | Integração de Aplicativos | 9 |
+| 20 | Aplicativos Empresariais | 12 |
+| 21 | Computação de Usuário Final | 4 |
+| 22 | Internet das Coisas | 8 |
+| 23 | Desenvolvimento de Jogos | 2 |
 
-**Total: 224 Serviços AWS**
+**Total: 235 Serviços AWS**
 
 ---
 
@@ -106,17 +113,18 @@ aws-ccp-game/
 ├── static/
 │   ├── logo.png              # Logo do jogo
 │   ├── assinatura.png        # Assinatura para certificado
-│   └── comandos.backup       # Backup dos comandos
+│   └── som.mp3               # Música de fundo
 ├── app.py                    # Aplicação principal
-├── comandos.json             # 224 serviços AWS com descrições
+├── comandos.json             # 235 serviços AWS com descrições
 ├── requirements.txt          # Dependências Python
+├── packages.txt              # Pacotes do sistema (fontes)
 ├── README.md                 # Documentação
 └── .gitignore               # Arquivos ignorados pelo Git
 ```
 
 ## 🎓 Certificado
 
-Ao completar todas as 17 fases e dominar os 224 serviços AWS, você receberá um **Certificado Digital** personalizado com:
+Ao completar todas as 23 fases e dominar os 235 serviços AWS, você receberá um **Certificado Digital** personalizado com:
 
 - ✅ Seu nome
 - ✅ Data de conclusão
@@ -124,6 +132,7 @@ Ao completar todas as 17 fases e dominar os 224 serviços AWS, você receberá u
 - ✅ Logo oficial do jogo
 - ✅ Assinatura digital
 - ✅ Download em PNG de alta qualidade
+- ✅ Menção aos 235 serviços dominados
 
 ---
 
@@ -140,20 +149,31 @@ Ao completar todas as 17 fases e dominar os 224 serviços AWS, você receberá u
 
 ## 📊 Categorias de Serviços AWS
 
-O jogo abrange todas as principais categorias de serviços AWS:
+O jogo abrange todas as 23 categorias oficiais de serviços AWS 2026:
 
-- ☁️ **Computação** - EC2, Lambda, Lightsail, Batch, ECS, EKS
-- 💾 **Armazenamento** - S3, EFS, FSx, Glacier, Storage Gateway
-- 🗄️ **Banco de Dados** - RDS, DynamoDB, Aurora, Neptune, DocumentDB
-- 🌐 **Rede** - VPC, CloudFront, Route 53, Direct Connect, API Gateway
-- 🔒 **Segurança** - IAM, GuardDuty, Inspector, Macie, WAF, Shield
-- 📊 **Analytics** - Athena, Redshift, Kinesis, QuickSight, EMR
-- 🤖 **Machine Learning** - SageMaker, Bedrock, Rekognition, Comprehend
-- 🔧 **Gerenciamento** - CloudWatch, CloudFormation, Systems Manager
-- 📱 **Mobile & IoT** - IoT Core, Amplify, AppSync, Device Farm
-- 🎬 **Mídia** - MediaConvert, MediaLive, IVS, Kinesis Video Streams
-- 🎮 **Gaming** - GameLift
-- 🔬 **Outros** - Quantum (Braket), Blockchain, Satellite (Ground Station)
+- ☁️ **Computação** - EC2, Lambda, Lightsail, Batch, Elastic Beanstalk, App Runner
+- 📦 **Contêineres** - ECS, EKS, ECR, Red Hat OpenShift Service on AWS
+- 💾 **Armazenamento** - S3, EFS, FSx, Glacier, Storage Gateway, AWS Backup
+- 🗄️ **Banco de Dados** - RDS, Aurora, DynamoDB, Neptune, DocumentDB, Keyspaces, Timestream
+- 🚚 **Migração e Transferência** - Migration Hub, DMS, DataSync, Snow Family, Transfer Family
+- 🌐 **Redes e Entrega de Conteúdo** - VPC, CloudFront, Route 53, Direct Connect, API Gateway
+- 🔧 **Ferramentas do Desenvolvedor** - CodeCommit, CodeBuild, CodeDeploy, CodePipeline, Cloud9, X-Ray
+- 🎓 **Capacitação do Cliente** - AWS Skill Builder, Training and Certification, re:Post
+- ⛓️ **Blockchain** - Managed Blockchain
+- 🛰️ **Satélite** - Ground Station
+- ⚛️ **Quantum Technologies** - Amazon Braket
+- 🎛️ **Gerenciamento e Governança** - CloudWatch, CloudFormation, Systems Manager, Control Tower, Organizations
+- 🎬 **Serviços de Mídia** - MediaConvert, MediaLive, IVS, Kinesis Video Streams, Elemental
+- 🤖 **Machine Learning** - SageMaker, Bedrock, Rekognition, Comprehend, Lex, Polly, Transcribe
+- 📊 **Análise de Dados** - Athena, Redshift, Kinesis, QuickSight, EMR, Glue, OpenSearch
+- 🔒 **Segurança, Identidade e Conformidade** - IAM, GuardDuty, Inspector, Macie, WAF, Shield, Cognito, KMS
+- 💰 **Cloud Financial Management** - Cost Explorer, Budgets, Billing Conductor
+- 📱 **Dispositivos Móveis** - Amplify, AppSync, Device Farm, Location Service
+- 🔗 **Integração de Aplicativos** - EventBridge, SNS, SQS, Step Functions, AppFlow, MQ
+- 🏢 **Aplicativos Empresariais** - WorkSpaces, WorkMail, Connect, Chime, Supply Chain
+- 🖥️ **Computação de Usuário Final** - WorkSpaces, WorkSpaces Applications, Thin Client, Secure Browser
+- 🌐 **Internet das Coisas** - IoT Core, IoT Greengrass, IoT SiteWise, IoT Events, IoT Device Management
+- 🎮 **Desenvolvimento de Jogos** - GameLift Servers, GameLift Streams
 
 ---
 
@@ -226,13 +246,14 @@ Certificado digital personalizado ao completar o jogo
 
 ## 🎯 Objetivo Educacional
 
-Este jogo foi desenvolvido para ajudar estudantes e iniciantes AWS a:
+Este jogo foi desenvolvido para ajudar estudantes e profissionais AWS a:
 
-- ✅ Memorizar os principais serviços AWS
-- ✅ Entender as categorias de serviços
-- ✅ Preparar-se para certificação AWS CCP
+- ✅ Memorizar os 235 principais serviços AWS
+- ✅ Entender as 23 categorias oficiais da AWS 2026
+- ✅ Preparar-se para certificação AWS Cloud Practitioner
 - ✅ Aprender de forma gamificada e divertida
-- ✅ Ter uma visão geral do ecossistema AWS
+- ✅ Ter uma visão completa do ecossistema AWS
+- ✅ Treinar memória sem spoilers de siglas
 
 ---
 
