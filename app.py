@@ -633,7 +633,7 @@ def render_sidebar():
         st.markdown("#### 🕵️ Status do Detetive:")
         st.markdown(f"**Nome:** {st.session_state.nome_jogador}")
         st.markdown(f"**Fase:** {st.session_state.fase_atual + 1}/23")
-        st.markdown(f"**Serviços:** {st.session_state.comandos_completados}/235")
+        st.markdown(f"**Serviço:** {st.session_state.comandos_completados}/235")
         
         # Barra de Progresso
         progress = st.session_state.comandos_completados / 235

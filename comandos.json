@@ -61,11 +61,11 @@
   },
   {
     "comando": "S3",
-    "descricao": "Amazon Simple Storage Service é o serviço de armazenamento de objetos mais utilizado do mundo, com durabilidade de 99,999999999% (11 noves). Armazena qualquer tipo de arquivo com acesso via HTTP/HTTPS. Oferece classes de armazenamento para diferentes padrões de acesso, como S3 Standard, Intelligent-Tiering e Glacier. Base para data lakes, backup, hospedagem de sites estáticos e distribuição de conteúdo."
+    "descricao": "É o serviço de armazenamento de objetos mais utilizado do mundo, com durabilidade de 99,999999999% (11 noves). Armazena qualquer tipo de arquivo com acesso via HTTP/HTTPS. Oferece classes de armazenamento para diferentes padrões de acesso, como S3 Standard, Intelligent-Tiering e Glacier. Base para data lakes, backup, hospedagem de sites estáticos e distribuição de conteúdo."
   },
   {
     "comando": "EFS",
-    "descricao": "Amazon Elastic File System é um sistema de arquivos NFS totalmente gerenciado e elástico para uso com EC2, ECS e Lambda. Escala automaticamente conforme os dados crescem ou diminuem, sem necessidade de provisionar capacidade. Suporta acesso simultâneo de múltiplas instâncias, ideal para workloads compartilhados. Disponível nas classes Standard e Infrequent Access para otimização de custos."
+    "descricao": "É um sistema de arquivos NFS totalmente gerenciado e elástico para uso com EC2, ECS e Lambda. Escala automaticamente conforme os dados crescem ou diminuem, sem necessidade de provisionar capacidade. Suporta acesso simultâneo de múltiplas instâncias, ideal para workloads compartilhados. Disponível nas classes Standard e Infrequent Access para otimização de custos."
   },
   {
     "comando": "FSx",
@@ -173,7 +173,7 @@
   },
   {
     "comando": "VPC",
-    "descricao": "Amazon Virtual Private Cloud permite criar redes virtuais isoladas logicamente dentro da AWS, com controle total sobre endereçamento IP, sub-redes, tabelas de roteamento e gateways. É a base de toda arquitetura de rede na AWS, isolando recursos e controlando o tráfego de entrada e saída. Suporta VPN, Direct Connect, peering entre VPCs e Transit Gateway para topologias complexas. Inclui VPC Endpoints com AWS PrivateLink para conectividade privada a serviços AWS e aplicações de terceiros sem expor tráfego à Internet pública. Fundamental para segurança e segmentação de ambientes cloud."
+    "descricao": "Permite criar redes virtuais isoladas logicamente dentro da AWS, com controle total sobre endereçamento IP, sub-redes, tabelas de roteamento e gateways. É a base de toda arquitetura de rede na AWS, isolando recursos e controlando o tráfego de entrada e saída. Suporta VPN, Direct Connect, peering entre VPCs e Transit Gateway para topologias complexas. Inclui VPC Endpoints com AWS PrivateLink para conectividade privada a serviços AWS e aplicações de terceiros sem expor tráfego à Internet pública. Fundamental para segurança e segmentação de ambientes cloud."
   },
   {
     "comando": "CloudFront",
@@ -821,7 +821,7 @@
   },
   {
     "comando": "SWF",
-    "descricao": "Amazon Simple Workflow Service coordena tarefas e fluxos de trabalho distribuídos entre aplicações e componentes. Mantém o estado de execução de workflows de longa duração que podem levar dias, semanas ou meses. Garante que cada tarefa seja executada apenas uma vez e na ordem correta, mesmo com falhas. Ideal para processos de negócio complexos, pipelines de processamento de mídia e automação de operações. Nota: para novos projetos, AWS recomenda Step Functions."
+    "descricao": "Serviço que coordena tarefas e fluxos de trabalho distribuídos entre aplicações e componentes. Mantém o estado de execução de workflows de longa duração que podem levar dias, semanas ou meses. Garante que cada tarefa seja executada apenas uma vez e na ordem correta, mesmo com falhas. Ideal para processos de negócio complexos, pipelines de processamento de mídia e automação de operações. Nota: para novos projetos, AWS recomenda Step Functions."
   },
   {
     "comando": "Apache Airflow gerenciado",
