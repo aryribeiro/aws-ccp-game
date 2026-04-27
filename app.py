@@ -218,97 +218,126 @@ def load_commands():
 # ============================================================================
 
 def create_phases(commands):
-    """Cria 17 fases temáticas com narrativa"""
+    """Cria 23 fases temáticas com narrativa baseadas nas categorias oficiais AWS 2026"""
     
-    # Garantir que temos exatamente 224 comandos divididos em 17 fases
+    # Garantir que temos exatamente 235 comandos divididos em 23 fases (categorias oficiais)
     total_commands = len(commands)
-    commands_per_phase = 13
     
     phases = [
         {
-            "nome": "Entrando na Nuvem",
-            "narrativa": "🕵️ Detetive {nome}, você acaba de receber um chamado urgente!\n🦹 O vilão CÁLCULUS hackeou os sistemas da cidade e está deixando pistas em servidores na nuvem.\n🎯 MISSÃO: Dominar os serviços fundamentais da AWS para rastrear o vilão!",
-            "comandos": commands[0:10]
+            "nome": "Computação",
+            "narrativa": "🕵️ Detetive {nome}, você acaba de receber um chamado urgente!\n💻 O vilão CÁLCULUS hackeou os sistemas da cidade usando serviços de Computação da AWS.\n🎯 MISSÃO: Dominar os 11 serviços de Computação para rastrear o vilão!",
+            "comandos": commands[0:11]
         },
         {
-            "nome": "Poder de Computação",
-            "narrativa": "⚡ Ótimo trabalho! Você encontrou o primeiro servidor comprometido.\n💻 CÁLCULUS está usando instâncias de computação para seus ataques.\n🎯 MISSÃO: Aprenda os serviços de computação da AWS.",
-            "comandos": commands[10:20]
+            "nome": "Contêineres",
+            "narrativa": "📦 Ótimo trabalho! CÁLCULUS escondeu malware em Contêineres!\n🐳 Precisamos entender orquestração de containers para neutralizar a ameaça.\n🎯 MISSÃO: Aprenda os 4 serviços de Contêineres da AWS.",
+            "comandos": commands[11:15]
         },
         {
-            "nome": "Cofre de Dados",
-            "narrativa": "💾 CÁLCULUS deixou dados criptografados espalhados!\n🔐 Precisamos entender os serviços de armazenamento para preservar evidências.\n🎯 MISSÃO: Domine os serviços de storage da AWS.",
-            "comandos": commands[20:30]
+            "nome": "Armazenamento",
+            "narrativa": "💾 CÁLCULUS deixou dados criptografados espalhados em sistemas de Armazenamento!\n🔐 Precisamos dominar os serviços de storage para preservar evidências.\n🎯 MISSÃO: Domine os 8 serviços de Armazenamento da AWS.",
+            "comandos": commands[15:23]
         },
         {
-            "nome": "Bases de Conhecimento",
-            "narrativa": "🗄️ Detectamos bancos de dados maliciosos rodando!\n📊 CÁLCULUS está armazenando informações roubadas em databases.\n🎯 MISSÃO: Aprenda os serviços de banco de dados da AWS.",
-            "comandos": commands[30:40]
+            "nome": "Banco de Dados",
+            "narrativa": "🗄️ Detectamos bancos de dados maliciosos rodando!\n📊 CÁLCULUS está armazenando informações roubadas em serviços de Banco de Dados.\n🎯 MISSÃO: Aprenda os 10 serviços de Banco de Dados da AWS.",
+            "comandos": commands[23:33]
         },
         {
-            "nome": "Conectando o Mundo",
-            "narrativa": "🌐 Encontramos atividade de rede suspeita!\n📡 CÁLCULUS está se conectando a servidores em todo o mundo.\n🎯 MISSÃO: Domine os serviços de rede e CDN da AWS.",
-            "comandos": commands[40:50]
+            "nome": "Migração e Transferência",
+            "narrativa": "🚚 CÁLCULUS está migrando dados roubados para esconder suas pistas!\n📦 Vamos interceptar usando serviços de Migração e Transferência.\n🎯 MISSÃO: Aprenda os 10 serviços de Migração e Transferência da AWS.",
+            "comandos": commands[33:43]
         },
         {
-            "nome": "Fortaleza Digital",
-            "narrativa": "🔒 A segurança foi comprometida!\n🛡️ Precisamos entender os serviços de segurança para proteger os sistemas.\n🎯 MISSÃO: Aprenda os serviços de segurança e identidade da AWS.",
-            "comandos": commands[50:60]
+            "nome": "Redes e Entrega de Conteúdo",
+            "narrativa": "🌐 Encontramos atividade de rede suspeita!\n📡 CÁLCULUS está usando serviços de Redes e Entrega de Conteúdo para se conectar globalmente.\n🎯 MISSÃO: Domine os 12 serviços de Redes e Entrega de Conteúdo da AWS.",
+            "comandos": commands[43:55]
         },
         {
-            "nome": "Mineração de Insights",
-            "narrativa": "📊 As pistas estão escondidas em terabytes de dados!\n🔍 Precisamos usar analytics para encontrar padrões.\n🎯 MISSÃO: Domine os serviços de análise de dados da AWS.",
-            "comandos": commands[60:70]
+            "nome": "Ferramentas do Desenvolvedor",
+            "narrativa": "⚙️ Precisamos automatizar nossa resposta!\n🚀 CÁLCULUS está usando Ferramentas do Desenvolvedor para atacar rapidamente.\n🎯 MISSÃO: Domine os 16 serviços de Ferramentas do Desenvolvedor da AWS.",
+            "comandos": commands[55:71]
         },
         {
-            "nome": "Inteligência Artificial",
-            "narrativa": "🤖 CÁLCULUS está usando IA contra nós!\n🧠 Vamos usar machine learning para prever seus próximos passos.\n🎯 MISSÃO: Aprenda os serviços de ML e IA da AWS.",
-            "comandos": commands[70:80]
+            "nome": "Capacitação do Cliente",
+            "narrativa": "🎓 CÁLCULUS está treinando hackers usando plataformas de ensino!\n📚 Precisamos dominar os serviços de Capacitação do Cliente para entender suas táticas.\n🎯 MISSÃO: Aprenda os 5 serviços de Capacitação do Cliente da AWS.",
+            "comandos": commands[71:76]
         },
         {
-            "nome": "Automação Total",
-            "narrativa": "⚙️ Precisamos automatizar nossa resposta!\n🚀 CÁLCULUS está usando DevOps para atacar rapidamente.\n🎯 MISSÃO: Domine os serviços de DevOps e automação da AWS.",
-            "comandos": commands[80:90]
+            "nome": "Blockchain",
+            "narrativa": "⛓️ Transações suspeitas detectadas em redes blockchain!\n🔗 CÁLCULUS está usando tecnologia Blockchain para ocultar transferências.\n🎯 MISSÃO: Domine o serviço de Blockchain da AWS.",
+            "comandos": commands[76:77]
         },
         {
-            "nome": "Containers em Ação",
-            "narrativa": "📦 CÁLCULUS escondeu malware em containers!\n🐳 Precisamos entender orquestração de containers.\n🎯 MISSÃO: Aprenda os serviços de containers da AWS.",
-            "comandos": commands[90:100]
+            "nome": "Satélite",
+            "narrativa": "🛰️ Sinais de comunicação via satélite interceptados!\n📡 CÁLCULUS está usando infraestrutura de Satélite para comunicação global.\n🎯 MISSÃO: Aprenda o serviço de Satélite da AWS.",
+            "comandos": commands[77:78]
         },
         {
-            "nome": "Sem Servidores",
-            "narrativa": "⚡ Rastreamento serverless em andamento!\n🔌 O vilão está usando funções sem servidor para se esconder.\n🎯 MISSÃO: Domine os serviços serverless da AWS.",
-            "comandos": commands[100:110]
+            "nome": "Quantum Technologies",
+            "narrativa": "⚛️ Computação quântica detectada!\n🔬 CÁLCULUS está experimentando com Quantum Technologies para quebrar criptografia.\n🎯 MISSÃO: Domine o serviço de Quantum Technologies da AWS.",
+            "comandos": commands[78:79]
         },
         {
-            "nome": "Jornada para a Nuvem",
-            "narrativa": "🚚 CÁLCULUS está migrando dados roubados!\n📦 Vamos interceptar usando serviços de migração.\n🎯 MISSÃO: Aprenda os serviços de migração e transferência da AWS.",
-            "comandos": commands[110:120]
+            "nome": "Gerenciamento e Governança",
+            "narrativa": "🎛️ Precisamos controlar toda a infraestrutura!\n📊 CÁLCULUS está explorando falhas em Gerenciamento e Governança.\n🎯 MISSÃO: Aprenda os 29 serviços de Gerenciamento e Governança da AWS.",
+            "comandos": commands[79:108]
+        },
+        {
+            "nome": "Serviços de Mídia",
+            "narrativa": "🎬 O vilão está transmitindo mensagens criptografadas!\n📺 Precisamos interceptar os Serviços de Mídia para decodificar suas comunicações.\n🎯 MISSÃO: Aprenda os 11 serviços de Mídia da AWS.",
+            "comandos": commands[108:119]
+        },
+        {
+            "nome": "Machine Learning",
+            "narrativa": "🤖 CÁLCULUS está usando IA contra nós!\n🧠 Vamos usar Machine Learning para prever seus próximos passos.\n🎯 MISSÃO: Aprenda os 28 serviços de Machine Learning da AWS.",
+            "comandos": commands[119:147]
+        },
+        {
+            "nome": "Análise de Dados",
+            "narrativa": "📊 As pistas estão escondidas em terabytes de dados!\n🔍 Precisamos usar Análise de Dados para encontrar padrões.\n🎯 MISSÃO: Domine os 20 serviços de Análise de Dados da AWS.",
+            "comandos": commands[147:167]
+        },
+        {
+            "nome": "Segurança, Identidade e Conformidade",
+            "narrativa": "🔒 A segurança foi comprometida!\n🛡️ Precisamos dominar Segurança, Identidade e Conformidade para proteger os sistemas.\n🎯 MISSÃO: Aprenda os 26 serviços de Segurança, Identidade e Conformidade da AWS.",
+            "comandos": commands[167:193]
+        },
+        {
+            "nome": "Cloud Financial Management",
+            "narrativa": "💰 CÁLCULUS está desviando recursos financeiros!\n📈 Precisamos usar Cloud Financial Management para rastrear os custos.\n🎯 MISSÃO: Domine os 3 serviços de Cloud Financial Management da AWS.",
+            "comandos": commands[193:196]
+        },
+        {
+            "nome": "Dispositivos Móveis",
+            "narrativa": "📱 Aplicativos móveis comprometidos detectados!\n📲 CÁLCULUS está atacando através de Dispositivos Móveis.\n🎯 MISSÃO: Aprenda os 4 serviços de Dispositivos Móveis da AWS.",
+            "comandos": commands[196:200]
+        },
+        {
+            "nome": "Integração de Aplicativos",
+            "narrativa": "🔗 Sistemas desconectados precisam se comunicar!\n⚡ CÁLCULUS está explorando falhas na Integração de Aplicativos.\n🎯 MISSÃO: Domine os 9 serviços de Integração de Aplicativos da AWS.",
+            "comandos": commands[200:209]
+        },
+        {
+            "nome": "Aplicativos Empresariais",
+            "narrativa": "🏢 Sistemas corporativos sob ataque!\n💼 CÁLCULUS está invadindo Aplicativos Empresariais para roubar dados sensíveis.\n🎯 MISSÃO: Aprenda os 12 serviços de Aplicativos Empresariais da AWS.",
+            "comandos": commands[209:221]
+        },
+        {
+            "nome": "Computação de Usuário Final",
+            "narrativa": "🖥️ Desktops virtuais comprometidos!\n👥 CÁLCULUS está atacando a Computação de Usuário Final.\n🎯 MISSÃO: Domine os 4 serviços de Computação de Usuário Final da AWS.",
+            "comandos": commands[221:225]
         },
         {
             "nome": "Internet das Coisas",
-            "narrativa": "🌐 Dispositivos IoT foram hackeados!\n📡 CÁLCULUS está controlando milhares de dispositivos conectados.\n🎯 MISSÃO: Domine os serviços de IoT da AWS.",
-            "comandos": commands[120:130]
+            "narrativa": "🌐 Dispositivos IoT foram hackeados!\n📡 CÁLCULUS está controlando milhares de dispositivos através da Internet das Coisas.\n🎯 MISSÃO: Domine os 8 serviços de Internet das Coisas da AWS.",
+            "comandos": commands[225:233]
         },
         {
-            "nome": "Streaming de Mídia",
-            "narrativa": "🎬 O vilão está transmitindo mensagens criptografadas!\n📺 Precisamos interceptar os streams de vídeo e áudio.\n🎯 MISSÃO: Aprenda os serviços de mídia da AWS.",
-            "comandos": commands[130:140]
-        },
-        {
-            "nome": "Olhos na Infraestrutura",
-            "narrativa": "👁️ Precisamos monitorar tudo!\n📊 CÁLCULUS pode atacar a qualquer momento.\n🎯 MISSÃO: Domine os serviços de monitoramento e observabilidade da AWS.",
-            "comandos": commands[140:150]
-        },
-        {
-            "nome": "Serviços Avançados",
-            "narrativa": "🔬 Análise profunda necessária!\n🎯 CÁLCULUS está usando serviços especializados e avançados.\n🎯 MISSÃO: Domine os serviços especializados da AWS.",
-            "comandos": commands[150:170]
-        },
-        {
-            "nome": "DOMÍNIO COMPLETO DA AWS",
-            "narrativa": "🚨 ALERTA MÁXIMO! Você está no servidor principal de CÁLCULUS!\n🦹 Este é o confronto final! Ele deixou os serviços mais complexos como última defesa.\n🎯 MISSÃO FINAL: Prove que você domina completamente a AWS!",
-            "comandos": commands[170:] if len(commands) > 170 else []
+            "nome": "Desenvolvimento de Jogos",
+            "narrativa": "🎮 ALERTA MÁXIMO! Você está no servidor principal de CÁLCULUS!\n🦹 Este é o confronto final! Ele escondeu suas últimas defesas em serviços de Desenvolvimento de Jogos.\n🎯 MISSÃO FINAL: Domine os 2 serviços de Desenvolvimento de Jogos e capture o vilão!",
+            "comandos": commands[233:235]
         }
     ]
     
@@ -417,8 +446,8 @@ def process_command(user_input):
         add_to_terminal("✅ SERVIÇO AWS CORRETO! Excelente trabalho, Detetive!", "success")
         add_to_terminal("", "text")
         
-        # VERIFICAR SE COMPLETOU TODOS OS 224 SERVIÇOS
-        if st.session_state.comandos_completados >= 224:
+        # VERIFICAR SE COMPLETOU TODOS OS 235 SERVIÇOS
+        if st.session_state.comandos_completados >= 235:
             st.session_state.game_completed = True
             add_to_terminal("", "text")
             add_to_terminal("🎉🎉🎉 PARABÉNS! VOCÊ CAPTUROU O CÁLCULUS! 🎉🎉🎉", "success")
@@ -541,7 +570,7 @@ def generate_certificate(nome):
         f"Carga horária estimada: 4 horas",
         f"Data de conclusão: {datetime.now().strftime('%d/%m/%Y')}",
         f"",
-        f"Domínio de 224 serviços AWS!",
+        f"Domínio de 235 serviços AWS!",
     ]
     
     y_position = y_start + 70
@@ -603,11 +632,11 @@ def render_sidebar():
         # Status do Jogador
         st.markdown("#### 🕵️ Status do Detetive:")
         st.markdown(f"**Nome:** {st.session_state.nome_jogador}")
-        st.markdown(f"**Fase:** {st.session_state.fase_atual + 1}/17")
-        st.markdown(f"**Comandos:** {st.session_state.comandos_completados}/224")
+        st.markdown(f"**Fase:** {st.session_state.fase_atual + 1}/23")
+        st.markdown(f"**Serviços:** {st.session_state.comandos_completados}/235")
         
         # Barra de Progresso
-        progress = st.session_state.comandos_completados / 224
+        progress = st.session_state.comandos_completados / 235
         st.progress(progress)
         st.markdown(f"**{progress*100:.1f}%** completo")
         
@@ -787,8 +816,8 @@ def render_welcome_screen():
         <p>
           Você é um <strong>Detetive</strong> convocado para uma missão urgente:<br/><br/>
           🦹 <strong>O vilão CÁLCULUS</strong> hackeou os sistemas da cidade!<br/><br/>
-          Para capturá-lo, você precisará dominar <strong>224 serviços AWS</strong> através de
-          <strong>17 fases progressivas</strong> repletas de desafios e investigações.<br/><br/>
+          Para capturá-lo, você precisará dominar <strong>235 serviços AWS</strong> através de
+          <strong>23 fases progressivas</strong> repletas de desafios e investigações.<br/><br/>
           🎯 <strong>Sua missão:</strong><br/>
           &nbsp;&nbsp;• Aprender sobre os serviços AWS de forma progressiva<br/>
           &nbsp;&nbsp;• Seguir as pistas deixadas pelo vilão<br/>
@@ -852,8 +881,8 @@ def render_victory_screen():
         🏆 Missão cumprida com êxito total!
         
         📊 **Suas conquistas:**
-        - ✅ 224 serviços AWS dominados
-        - ✅ 17 fases concluídas
+        - ✅ 235 serviços AWS dominados
+        - ✅ 23 fases concluídas
         - ✅ Vilão capturado e sistemas restaurados
         
         ⏱️ **Tempo de treinamento:** 4 horas equivalentes
@@ -886,10 +915,10 @@ def render_victory_screen():
         col_a, col_b, col_c = st.columns(3)
         
         with col_a:
-            st.metric("Serviços AWS Aprendidos", "224")
+            st.metric("Serviços AWS Aprendidos", "235")
         
         with col_b:
-            st.metric("Fases Completadas", "17")
+            st.metric("Fases Completadas", "23")
         
         with col_c:
             st.metric("Taxa de Sucesso", "100%")
