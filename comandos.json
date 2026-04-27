@@ -61,7 +61,7 @@
   },
   {
     "comando": "S3",
-    "descricao": "É o serviço de armazenamento de objetos mais utilizado do mundo, com durabilidade de 99,999999999% (11 noves). Armazena qualquer tipo de arquivo com acesso via HTTP/HTTPS. Oferece classes de armazenamento para diferentes padrões de acesso, como S3 Standard, Intelligent-Tiering e Glacier. Base para data lakes, backup, hospedagem de sites estáticos e distribuição de conteúdo."
+    "descricao": "É o serviço de armazenamento de objetos mais utilizado do mundo, com durabilidade de 99,999999999% (11 noves). Armazena qualquer tipo de arquivo com acesso via HTTP/HTTPS. Oferece classes de armazenamento para diferentes padrões de acesso, como Standard, Intelligent-Tiering e Glacier. Base para data lakes, backup, hospedagem de sites estáticos e distribuição de conteúdo."
   },
   {
     "comando": "EFS",
@@ -356,7 +356,7 @@
     "descricao": "Ferramenta que guia revisões de arquitetura baseadas nos seis pilares do AWS Well-Architected Framework: excelência operacional, segurança, confiabilidade, eficiência de performance, otimização de custos e sustentabilidade. Faz perguntas estruturadas sobre a arquitetura e identifica riscos com recomendações de melhoria. Gera planos de melhoria priorizados. Pode ser aplicado a qualquer workload AWS para identificar vulnerabilidades antes que se tornem problemas."
   },
   {
-    "comando": "Amazon Q Developer in chat applications (Anteriormente AWS Chatbot)",
+    "comando": "Amazon Q Developer in chat applications",
     "descricao": "Anteriormente conhecido como AWS Chatbot, integra notificações e interações de operações AWS com plataformas de chat como Slack e Microsoft Teams. Permite receber alertas do CloudWatch, notificações de segurança e atualizações de pipeline diretamente no chat. Possibilita executar comandos AWS e consultar status de recursos sem sair do ambiente de chat. Acelera o ChatOps e a resposta a incidentes operacionais integrando AWS ao fluxo de comunicação das equipes."
   },
   {
@@ -373,11 +373,11 @@
   },
   {
     "comando": "Amazon Grafana",
-    "descricao": "Serviço gerenciado do popular Grafana para visualização de métricas, logs e traces de múltiplas fontes de dados. Elimina a necessidade de instalar, configurar e manter instâncias do Grafana. Integra-se nativamente com CloudWatch, X-Ray, Timestream, OpenSearch e dezenas de fontes externas como Prometheus e Datadog. Ideal para dashboards operacionais unificados que correlacionam dados de múltiplas fontes em uma visão única."
+    "descricao": "Serviço gerenciado e popular para visualização de métricas, logs e traces de múltiplas fontes de dados. Elimina a necessidade de instalar, configurar e manter instâncias. Integra-se nativamente com CloudWatch, X-Ray, Timestream, OpenSearch e dezenas de fontes externas como Prometheus e Datadog. Ideal para dashboards operacionais unificados que correlacionam dados de múltiplas fontes em uma visão única."
   },
   {
     "comando": "Amazon Prometheus",
-    "descricao": "Serviço de monitoramento de métricas gerenciado compatível com o ecossistema Prometheus de código aberto. Elimina a complexidade de operar clusters Prometheus com alta disponibilidade para ambientes Kubernetes em grande escala. Integra-se com EKS, ECS e cargas de trabalho on-premises via agentes Prometheus existentes. Armazena métricas com retenção configurável e integra-se nativamente com o Amazon Grafana para visualização."
+    "descricao": "Serviço de monitoramento de métricas gerenciado compatível com um ecossistema de código aberto. Ele elimina a complexidade de operar clusters com alta disponibilidade para ambientes Kubernetes em grande escala. Integra-se com EKS, ECS e cargas de trabalho on-premises via agentes existentes. Armazena métricas com retenção configurável e integra-se nativamente com o Amazon Grafana para visualização."
   },
   {
     "comando": "AWS Resilience Hub",
